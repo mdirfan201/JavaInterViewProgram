@@ -7,14 +7,15 @@ import java.util.Set;
 public class FindDuplicateElements {
 	public static void main(String[] args) {
 		String str[]= {"Amazon","GCP","Flipkart","Azure","Amazon","AliBaba","Azure","GCP","SauceLabs"};
+		int len=str.length;
 		int arr[]= {1,1,2,3,4,5,6,7,8,9,5,8,3};
 		//1. brute force
 		//2. HashSet
 		//3. HashMap
 		
 		System.out.println("*********Brute Forece********");
-		for(int i=0;i<str.length;i++) {
-			for(int j=i+1;j<str.length;j++) {
+		for(int i=0;i<len;i++) {
+			for(int j=i+1;j<len;j++) {
 				if(str[i].equals(str[j])) {
 					System.out.println(str[i]);
 				}
@@ -60,7 +61,7 @@ public class FindDuplicateElements {
 		Set<Entry<String, Integer>>	entrySet=strMap.entrySet();
 		for(Entry<String, Integer> entry:entrySet) {
 			if(entry.getValue()>1) {
-				System.out.println(entry.getKey());
+				System.out.println(entry.getKey() + " : " + entry.getValue());
 			}
 		}
 	

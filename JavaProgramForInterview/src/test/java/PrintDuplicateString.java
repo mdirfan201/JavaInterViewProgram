@@ -9,14 +9,11 @@ public class PrintDuplicateString {
 		printDuplicateCharacters("");
 		printDuplicateCharacters("A");
 		printDuplicateCharacters("Irfan");
-		printDuplicateCharacters("JavaTPoint");
+		printDuplicateCharacters(" JavaTPointJ ");
 		printDuplicateCharacters("JavatPoint");
 		printDuplicateCharacters("10000");
 		printDuplicateCharacters("007227");
-		
-
 	}
-	
 	public static void printDuplicateCharacters(String str) {
 		
 		if(str==null) {
@@ -28,10 +25,8 @@ public class PrintDuplicateString {
 			System.out.println("Single Chr String /Only One Character is Present :" + str);
 			return;
 		}
-		
-		char words[]= str.toCharArray();
-		
 		Map<Character, Integer> charMap= new HashMap<Character, Integer>();
+		char words[]= str.toCharArray();
 		for(Character ch:words) {
 			if(charMap.containsKey(ch)) {
 				charMap.put(ch, charMap.get(ch)+1);
@@ -39,7 +34,6 @@ public class PrintDuplicateString {
 				charMap.put(ch, 1);
 			}
 		}
-		
 		//Print the map:-
 		Set<Map.Entry<Character, Integer>> entrySet =charMap.entrySet();
 		
